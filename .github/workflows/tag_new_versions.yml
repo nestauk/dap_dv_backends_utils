@@ -1,0 +1,34 @@
+name: Tag new version
+
+on:
+  push:
+    branches:
+      - 'dev'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with: 
+          fetch-depth: 0
+      - name: Get possible new version
+        id: newVersionStep
+        run: |
+          new=$(echo $(cat ./package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]'))
+          echo "new=$new" >> $GITHUB_OUTPUT
+      - name: Check current version
+        id: currentVersionStep
+        run: |
+          current=$(git tag  | grep -E '^v[0-9]' | sort -V | tail -1 | cut -c2-) 
+          echo "current=$current" >> $GITHUB_OUTPUT
+      - name: Tag new version and push to release 
+        if: ${{ steps.currentVersionStep.outputs.current != steps.newVersionStep.outputs.new }}
+        run: |
+          tag=${{ format('v{0}', steps.newVersionStep.outputs.new) }}
+          git tag $tag
+          git push origin $tag 
+          git switch release
+          git merge dev
+          git push 
