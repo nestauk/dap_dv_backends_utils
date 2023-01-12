@@ -2,18 +2,17 @@ import * as cliProgress from 'cli-progress';
 import * as _ from 'lamb';
 
 import { getLength, mergeWithMerge, stringify } from '@svizzle/utils';
-
 import fetch from 'node-fetch';
 
-import { defaultMapping, metaDataMapping } from 'conf/mappings.mjs';
-import { count, updateMapping } from 'es/index.mjs';
-import { update } from 'es/update.mjs';
-import { scroll, clearScroll } from 'es/search.mjs';
-import { bulkRequest } from 'es/bulk.mjs';
-import { batch } from 'util/array.mjs';
-import { logger } from 'logging/logging.mjs';
-import { promisesHandler } from 'util/promises.mjs';
-import { spotlightEndpoint, confidenceValues } from 'conf/config.mjs';
+import { defaultMapping, metaDataMapping } from '../conf/mappings.mjs';
+import { count, updateMapping } from '../es/index.mjs';
+import { update } from '../es/update.mjs';
+import { scroll, clearScroll } from '../es/search.mjs';
+import { bulkRequest } from '../es/bulk.mjs';
+import { batch } from '../util/array.mjs';
+import { logger } from '../logging/logging.mjs';
+import { promisesHandler } from '../util/promises.mjs';
+import { spotlightEndpoint, confidenceValues } from '../conf/config.mjs';
 
 /**
  * The resource object that the spotlight tool responds with. Each resource corresponds to a DBpedia URI.

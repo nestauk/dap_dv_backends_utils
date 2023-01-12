@@ -2,9 +2,9 @@ import * as _ from 'lamb';
 
 import { getValue, isIterableLongerThan1 } from '@svizzle/utils';
 
-import { loadOntology } from 'dbpedia/ontology.mjs';
-import { dbr, prefixes } from 'dbpedia/util.mjs';
-import { query } from 'sparql/query.mjs';
+import { loadOntology } from '../dbpedia/ontology.mjs';
+import { dbr, prefixes } from '../dbpedia/util.mjs';
+import { query } from '../sparql/query.mjs';
 
 const sanitizeInput = input => {
 	const URIs = typeof input === 'string' ? [input] : input;

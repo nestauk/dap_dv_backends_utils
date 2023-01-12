@@ -15,9 +15,9 @@ import * as cliProgress from 'cli-progress';
 
 import * as _ from 'lamb';
 
-import { bulkRequest } from 'es/bulk.mjs';
-import { scroll } from 'es/search.mjs';
-import { count, createIndex } from 'es/index.mjs';
+import { bulkRequest } from '../es/bulk.mjs';
+import { scroll } from '../es/search.mjs';
+import { count, createIndex } from '../es/index.mjs';
 
 
 // https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html

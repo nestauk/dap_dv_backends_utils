@@ -1,4 +1,4 @@
-import { buildRequest, makeRequest } from 'es/requests.mjs';
+import { buildRequest, makeRequest } from '../es/requests.mjs';
 
 /**
  * @function clearScroll

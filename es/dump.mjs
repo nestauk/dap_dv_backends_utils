@@ -1,8 +1,8 @@
 import { SingleBar, Presets } from 'cli-progress';
 import * as _ from 'lamb';
 
-import { count } from 'es/index.mjs';
-import { scroll, clearScroll } from 'es/search.mjs';
+import { count } from '../es/index.mjs';
+import { scroll, clearScroll } from '../es/search.mjs';
 
 /**
  * @param {string} domain - domain on from which to dump data

@@ -4,7 +4,7 @@ import { NodeHttpHandler } from '@aws-sdk/node-http-handler';
 import { HttpRequest } from '@aws-sdk/protocol-http';
 import { SignatureV4 } from '@aws-sdk/signature-v4';
 
-import { sleep } from 'util/time.mjs';
+import { sleep } from '../util/time.mjs';
 
 const { Sha256 } = sha256;
 

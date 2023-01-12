@@ -1,7 +1,7 @@
 import * as _ from 'lamb';
 
-import { createPathAndWriteObject } from 'util/path.mjs';
-import { ami, scaffold, spotlightInstanceType } from 'conf/infrastructure.mjs';
+import { createPathAndWriteObject } from '../util/path.mjs';
+import { ami, scaffold, spotlightInstanceType } from '../conf/infrastructure.mjs';
 
 
 export const generateConfiguration = async(workers, path=null) => {

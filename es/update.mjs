@@ -1,7 +1,7 @@
 import { stringify } from '@svizzle/utils';
 import * as _ from 'lamb';
 
-import { buildRequest, makeRequest } from 'es/requests.mjs';
+import { buildRequest, makeRequest } from '../es/requests.mjs';
 
 /**
  * @function update
