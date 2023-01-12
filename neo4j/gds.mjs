@@ -1,8 +1,8 @@
 import * as _ from 'lamb';
 
-import { getSession } from 'neo4j/driver.mjs';
+import { getSession } from '../neo4j/driver.mjs';
 
-import { promisify } from 'neo4j/util.mjs';
+import { promisify } from '../neo4j/util.mjs';
 
 export const project = async(graphName, threshold) => {
 	const [session, driver] = await getSession();

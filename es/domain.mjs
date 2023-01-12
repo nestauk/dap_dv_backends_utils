@@ -1,4 +1,4 @@
-import { buildRequest, makeRequest } from 'es/requests.mjs';
+import { buildRequest, makeRequest } from '../es/requests.mjs';
 
 
 export const info = async domain => {

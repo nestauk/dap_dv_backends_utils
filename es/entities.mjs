@@ -1,8 +1,8 @@
 import * as _ from 'lamb';
 
-import { arxliveCopy } from 'conf/config.mjs';
-import { dbr } from 'dbpedia/util.mjs';
-import { scroll, clearScroll } from 'es/search.mjs';
+import { arxliveCopy } from '../conf/config.mjs';
+import { dbr } from '../dbpedia/util.mjs';
+import { scroll, clearScroll } from '../es/search.mjs';
 
 // titles are the Wiki pages with whitepace replaced with underscores, so
 // World War 1 => World_War_1

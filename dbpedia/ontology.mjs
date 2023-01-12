@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import { stringify } from '@svizzle/utils';
 import * as _ from 'lamb';
 
-import { dbo } from 'dbpedia/util.mjs';
+import { dbo } from '../dbpedia/util.mjs';
 
 const FILE_ONTOLOGY_JSON = 'data/dbpedia/ontology.json';
 

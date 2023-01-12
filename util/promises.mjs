@@ -1,5 +1,6 @@
 import { getValue, stringify } from '@svizzle/utils';
-import { logger } from 'logging/logging.mjs';
+
+import { logger } from '../logging/logging.mjs';
 
 const logErrors = v => {
 	if (v.status === 'rejected') {

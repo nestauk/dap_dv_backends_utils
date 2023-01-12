@@ -1,7 +1,7 @@
 import * as _ from 'lamb';
 
-import { getSession } from 'neo4j/driver.mjs';
-import { promisify } from 'neo4j/util.mjs';
+import { getSession } from '../neo4j/driver.mjs';
+import { promisify } from '../neo4j/util.mjs';
 
 const getMetadata = data => {
 	const intermediateCommunities = data[0].intermediateCommunityIds.length;

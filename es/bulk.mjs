@@ -1,8 +1,8 @@
 import { stringify } from '@svizzle/utils';
 import * as _ from 'lamb';
 
-import { buildRequest, makeRequest } from 'es/requests.mjs';
-import { logger } from 'logging/logging.mjs';
+import { buildRequest, makeRequest } from '../es/requests.mjs';
+import { logger } from '../logging/logging.mjs';
 
 const generateBulkPayload = (method, index) => _.pipe([
 	_.flatMapWith(doc =>

@@ -1,6 +1,6 @@
 import { stringify } from '@svizzle/utils';
 
-import { buildRequest, makeRequest } from 'es/requests.mjs';
+import { buildRequest, makeRequest } from '../es/requests.mjs';
 
 /**
  * @function create

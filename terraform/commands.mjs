@@ -1,7 +1,7 @@
 import { promisify } from 'node:util';
 import { exec } from 'child_process';
 
-import { displayCommandOutput } from 'util/shell.mjs';
+import { displayCommandOutput } from '../util/shell.mjs';
 
 const execAwait = promisify(exec);
 

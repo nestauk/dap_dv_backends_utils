@@ -1,8 +1,8 @@
 import { stringify } from '@svizzle/utils';
 import * as _ from 'lamb';
 
-import { arxliveCopy } from 'conf/config.mjs';
-import { buildRequest, makeRequest } from 'es/requests.mjs';
+import { arxliveCopy } from '../conf/config.mjs';
+import { buildRequest, makeRequest } from '../es/requests.mjs';
 
 export const list = async domain => {
 	const path = '_mappings';
