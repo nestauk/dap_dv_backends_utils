@@ -2,7 +2,7 @@ import * as cliProgress from 'cli-progress';
 import * as _ from 'lamb';
 
 import { getLength, mergeWithMerge, stringify } from '@svizzle/utils';
-import fetch from 'node-fetch';
+import { fetch } from 'undici'
 
 import { defaultMapping, metaDataMapping } from '../conf/mappings.mjs';
 import { count, updateMapping } from '../es/index.mjs';
