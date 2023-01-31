@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import * as _ from 'lamb';
 import { performance } from 'perf_hooks';
 
-import { arxliveCopy, settings } from '../conf/config.mjs';
+import { arxliveCopy } from '../conf/config.mjs';
 import { getMappings } from '../es/index.mjs';
 import { register, trigger, status } from '../es/snapshot.mjs';
 import { annotateIndex } from '../dbpedia/spotlight.mjs';
@@ -72,11 +72,6 @@ program.parse();
 const options = program.opts();
 
 const main = async () => {
-	if (!settings.snapshotSettings && !options.force) {
-		throw new Error(
-			'No snapshot configuration found and force flag not supplied'
-		);
-	}
 
 	const currentMapping = await getMappings(options.domain, options.index);
 	if (
@@ -89,22 +84,7 @@ const main = async () => {
 		);
 	}
 
-	const { body: snapshotStatus } = await status(options.domain);
-	if (snapshotStatus.snapshots.length !== 0) {
-		throw new Error(
-			`Can't trigger a snapshot as domain is already busy creating one`
-		);
-	}
-
 	const startTime = performance.now();
-
-	// initialize snapshot repository with given settings
-	await register(options.domain, settings.snapshotSettings.repository);
-	await trigger(
-		options.domain,
-		settings.snapshotSettings.repository,
-		`${options.newFieldName.toLowerCase()}-before-${Number(new Date())}`
-	);
 
 	await annotateIndex(
 		options.domain,
@@ -112,13 +92,6 @@ const main = async () => {
 		options.spotlight,
 		options.fieldName,
 		options
-	);
-
-	// trigger snapshot after successful run
-	await trigger(
-		options.domain,
-		settings.snapshotSettings.repository,
-		`${options.newFieldName.toLowerCase()}-after-${Number(new Date())}`
 	);
 
 	const endTime = performance.now();

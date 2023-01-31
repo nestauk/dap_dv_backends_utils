@@ -45,5 +45,5 @@
     "url": "git+https://github.com/nestauk/dap_dv_backends_utils.git"
   },
   "type": "module",
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

@@ -8,15 +8,3 @@ export const confidenceValues = [
 export const confidenceScores = [
 	0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
 ];
-
-export const settings = {
-	snapshotSettings: {
-		region: 'eu-west-2',
-		bucketName: 'nesta-datavis-arxlive-copy-snapshot',
-		snapshotRole: 'arxliveSnapshotRole',
-		repository: 'spotlight-annotation-backups',
-		awsID: '195787726158',
-	},
-};
-
-
