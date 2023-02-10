@@ -1,3 +1,7 @@
+# v0.0.4
+
+Add the jsonToEsIndex script to `bin/`
+
 # v0.0.3
 
 Port Terraform configuration to nestauk/dap_dv_backends
