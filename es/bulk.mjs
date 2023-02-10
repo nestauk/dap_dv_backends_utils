@@ -8,7 +8,7 @@ const generateBulkPayload = (method, index) => _.pipe([
 	_.flatMapWith(doc =>
 		[
 			{ [method]: {
-				...doc._id && { "_id": doc._id },
+				...('_id' in doc && { "_id": doc._id }),
 				"_index": index
 			} },
 			method === 'update' ? { doc: doc.data } : doc.data
@@ -33,7 +33,7 @@ export const bulkRequest = async (
 	index,
 	documents,
 	method,
-	{ error=true, refresh=false }={}
+	{ error=true, refresh="false" }={}
 ) => {
 	const path = `${index}/_bulk`;
 	const generate = generateBulkPayload(method, index);
@@ -44,6 +44,7 @@ export const bulkRequest = async (
 		console.log("Payload empty");
 		return { response: "Payload empty", code: 204 };
 	}
+
 	const request = buildRequest(
 		domain, path, 'POST',
 		{ payload, contentType: 'application/x-ndjson', query: { refresh } }

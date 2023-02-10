@@ -5,12 +5,12 @@ import { promises as fs } from 'fs';
 import { Command } from 'commander';
 import * as _ from 'lamb';
 
-import { arxliveCopy } from 'dap_dv_backends_utils/conf/config.mjs';
-import { bulkRequest } from 'dap_dv_backends_utils/es/bulk.mjs';
-import { createIndex } from 'dap_dv_backends_utils/es/index.mjs';
-import { logger } from 'dap_dv_backends_utils/logging/logging.mjs';
-import { batch } from 'dap_dv_backends_utils/util/array.mjs';
-import { commanderParseInt } from 'dap_dv_backends_utils/util/commander.mjs';
+import { arxliveCopy } from '../conf/config.mjs';
+import { bulkRequest } from '../es/bulk.mjs';
+import { createIndex } from '../es/index.mjs';
+import { logger } from '../logging/logging.mjs';
+import { batch } from '../util/array.mjs';
+import { commanderParseInt } from '../util/commander.mjs';
 
 const program = new Command();
 program.option(
@@ -37,7 +37,7 @@ const options = program.opts();
 
 const main = async () => {
 
-	await createIndex(options.index, options.domain);
+	await createIndex(options.domain, options.index);
 
 	const json = JSON.parse(
 		await fs.readFile(options.path, { encoding: 'utf-8' })
@@ -51,7 +51,7 @@ const main = async () => {
 		})
 		: _.map(data, (contents, _id) => ({ _id, data: contents }));
 
-	const docsWithId = _.filter(documents, doc => doc._id);
+	const docsWithId = _.filter(documents, doc => '_id' in doc);
 
 	for (const docs of batch(docsWithId, options.batchSize)) {
 		// eslint-disable-next-line no-await-in-loop
