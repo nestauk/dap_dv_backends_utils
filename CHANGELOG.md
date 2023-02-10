@@ -1,3 +1,8 @@
+# v0.0.5
+
+Patch import errors in `jsonToEsIndex.js` script 
+and patch a bulk request bug.
+
 # v0.0.4
 
 Add the jsonToEsIndex script to `bin/`

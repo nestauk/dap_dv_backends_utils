@@ -6,7 +6,6 @@ import { performance } from 'perf_hooks';
 
 import { arxliveCopy } from '../conf/config.mjs';
 import { getMappings } from '../es/index.mjs';
-import { register, trigger, status } from '../es/snapshot.mjs';
 import { annotateIndex } from '../dbpedia/spotlight.mjs';
 import { commanderParseInt } from '../util/commander.mjs';
 import { dedent } from '../util/string.mjs';
