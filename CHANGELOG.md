@@ -1,3 +1,8 @@
+# v0.0.6
+
+Add authentication logic formerly contained in the
+annotation service
+
 # v0.0.5
 
 Patch import errors in `jsonToEsIndex.js` script 
