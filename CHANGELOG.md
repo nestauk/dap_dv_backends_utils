@@ -1,3 +1,9 @@
+# v0.0.7
+
+Fix authentication bug. Authentication endpoint expects a GET request with
+email and token provided in the URLSearchParams, but instead was being passed
+as the body of a POST request. This change fixes that bug.
+
 # v0.0.6
 
 Add authentication logic formerly contained in the

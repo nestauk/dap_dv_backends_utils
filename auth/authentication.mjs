@@ -1,13 +1,6 @@
 export const authenticate = async (endpoint, email, token) => {
-	const body = JSON.stringify({ email, token });
-	const response = await fetch(
-		endpoint,
-		{
-			body,
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' }
-		}
-	);
+	const url = `${endpoint}?email=${email}&token=${token}`
+	const response = await fetch(url);
 	const result = await response.json();
 	return result;
 };
