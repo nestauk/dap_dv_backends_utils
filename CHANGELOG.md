@@ -1,3 +1,9 @@
+# v0.0.8
+
+Add scripts for downloading geographic boundaries from an arcGis FeatureServer,
+and for converting these boundaries to mbtiles/pmtiles, and uploading the
+pmtiles file to an s3 bucket.
+
 # v0.0.7
 
 Fix authentication bug. Authentication endpoint expects a GET request with
