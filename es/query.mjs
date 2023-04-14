@@ -10,7 +10,7 @@ export const query = async (query_, index, domain=arxliveCopy) => {
 		domain,
 		path,
 		'POST',
-		payload
+		{ payload }
 	);
 	const { body: response, code } = await makeRequest(request, { verbose: true });
 

@@ -1,3 +1,7 @@
+# v0.0.9
+
+Fix ES query bug
+
 # v0.0.8
 
 Add scripts for downloading geographic boundaries from an arcGis FeatureServer,
