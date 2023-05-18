@@ -50,5 +50,15 @@ argument, and the s3 URI of your desired bucket as the second argument:
 npx generatePmTiles boundaries/ s3://path-to-bucket
 ```
 
+### Uploading to s3
+
 You must have `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment
 variables set in order to upload the resulting pmtiles file to s3.
+
+To upload, simply run the following:
+
+pmtiles upload $pmtiles --bucket=$2 $pmtiles
+
+```sh
+pmtiles upload <path-to-pmtiles> --bucket=<s3://path-to-bucket> <path-to-pmtiles>
+```

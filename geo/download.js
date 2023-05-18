@@ -12,10 +12,10 @@ export const getAllFeatureIds = async featureServerEndpoint => {
         returnIdsOnly: true,
         where: '1=1'
     }).toString()
-    
+
     const response = await fetch(url, { method: 'POST' });
     const result = await response.json();
-    return result.objectIds; 
+    return result.objectIds;
 }
 
 export const collectAllFeatures = async featureServerEndpoint => {
@@ -27,13 +27,14 @@ export const collectAllFeatures = async featureServerEndpoint => {
         url.search = new URLSearchParams({
             f: 'geoJSON',
             where: '1=1',
-            objectIds: batch
+            objectIds: batch,
+            outFields: '*'
         })
         const response = await fetch(url, { method: 'POST' });
         const result = await response.json();
         return result;
     }
-    const results = await batchIterateFlatten(ids, downloadFeatures, { batchSize: 100});
+    const results = await batchIterateFlatten(ids, downloadFeatures, { batchSize: 100 });
     const collection = _.reduce(
         results,
         (acc, curr) => {
@@ -43,6 +44,6 @@ export const collectAllFeatures = async featureServerEndpoint => {
     )
     return {
         type: "FeatureCollection",
-        ...collection 
+        ...collection
     }
 }
