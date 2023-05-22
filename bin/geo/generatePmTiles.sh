@@ -1,7 +1,7 @@
 #! /bin/bash
 
-if [ "$#" -ne 2 ]; then
-    echo "Please supply path to the geojson files and s3 URI"
+if [ "$#" -ne 1 ]; then
+    echo "Please supply path to the geojson files" 
     exit 1
 fi
 
@@ -26,4 +26,3 @@ pmtiles="$tiles.pmtiles"
 
 tippecanoe -o $mbtiles -zg $files
 pmtiles convert $mbtiles $pmtiles
-pmtiles upload $pmtiles --bucket=$2 $pmtiles
