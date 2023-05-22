@@ -1,3 +1,7 @@
+# v0.0.10
+
+Fix Arcgis FeatureServer bug where features weren't returning all properties.
+
 # v0.0.9
 
 Fix ES query bug
