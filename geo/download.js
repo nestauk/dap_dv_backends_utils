@@ -28,7 +28,7 @@ export const collectAllFeatures = async featureServerEndpoint => {
             f: 'geoJSON',
             where: '1=1',
             objectIds: batch,
-            outFields: '*'
+            outFields: '*',
         })
         const response = await fetch(url, { method: 'POST' });
         const result = await response.json();

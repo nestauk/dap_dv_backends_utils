@@ -1,3 +1,7 @@
+# v0.0.11
+
+Due to uknown bug, the changes below were never pushed to GH
+
 # v0.0.10
 
 Fix Arcgis FeatureServer bug where features weren't returning all properties.
