@@ -1,3 +1,8 @@
+# v0.0.12
+
+Update package dependencies
+
+
 # v0.0.11
 
 Due to uknown bug, the changes below were never pushed to GH

@@ -26,7 +26,7 @@
     "lamb": "^0.60.0",
     "mkdirp": "^2.1.3",
     "neo4j-driver": "^5.0.1",
-    "undici": "^4.13.0",
+    "undici": "^5.22.1",
     "winston": "^3.5.1"
   },
   "description": "Utilties for the DAP data visualisation team's backend services",
