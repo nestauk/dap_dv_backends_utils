@@ -1,3 +1,6 @@
+# v0.0.13
+
+Fix Arcgis FeatureServer bug
 # v0.0.12
 
 Update package dependencies

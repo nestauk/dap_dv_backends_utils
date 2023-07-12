@@ -10,7 +10,8 @@ export const getAllFeatureIds = async featureServerEndpoint => {
     url.search = new URLSearchParams({
         f: 'json',
         returnIdsOnly: true,
-        where: '1=1'
+        where: '1=1',
+        outFields: '*'
     }).toString()
 
     const response = await fetch(url, { method: 'POST' });
