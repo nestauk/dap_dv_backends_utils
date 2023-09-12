@@ -1,10 +1,15 @@
+# v0.0.14
+
+Fix `#getEntities` function
+Fix `entitiesDataQuality` bug
+
 # v0.0.13
 
 Fix Arcgis FeatureServer bug
+
 # v0.0.12
 
 Update package dependencies
-
 
 # v0.0.11
 
