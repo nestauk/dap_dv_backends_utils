@@ -111,7 +111,7 @@ const main = async () => {
 	const imageURLStatus = await batchIterateFlatten(
 		imageURLs,
 		async batch_ => {
-			const responses = await Promise.all(
+			const responses = await Promise.allSettled(
 				_.map(batch_, t => fetch(t))
 			);
 			return _.map(

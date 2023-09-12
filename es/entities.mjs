@@ -20,12 +20,14 @@ export const getEntities = async(
 	let page;
 	for await (page of scroller) {
 		_.forEach(page.hits.hits, doc => {
-			_.forEach(doc._source.dbpedia_entities, ({ URI }) => {
-				const key = asTitle
-					? URI.replace(dbr, '')
-					: URI;
-				uriCounts[key] = uriCounts[key] ? uriCounts[key] + 1 : 1;
-			});
+			if ('dbpedia_entities' in doc._source) {
+				_.forEach(doc._source.dbpedia_entities, ({ URI }) => {
+					const key = asTitle
+						? URI.replace(dbr, '')
+						: URI;
+					uriCounts[key] = uriCounts[key] ? uriCounts[key] + 1 : 1;
+				});
+			}
 		});
 	}
 	if (page) {
