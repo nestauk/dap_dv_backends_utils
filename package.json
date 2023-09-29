@@ -1,6 +1,7 @@
 {
   "bin": {
     "annotate": "bin/annotate.js",
+    "annotateEsIndex": "bin/annotateEsIndex.js",
     "jsonToEsIndex": "bin/jsonToEsIndex.js",
     "annotationsDataQuality": "bin/annotationsDataQuality/annotationsDataQuality.js",
     "entitiesDataQuality": "bin/entitiesDataQuality.js",
@@ -49,5 +50,5 @@
     "url": "git+https://github.com/nestauk/dap_dv_backends_utils.git"
   },
   "type": "module",
-  "version": "0.0.14"
+  "version": "0.0.15"
 }

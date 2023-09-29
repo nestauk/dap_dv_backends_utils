@@ -1,3 +1,7 @@
+# v0.0.15
+
+Create `annotateEsIndex` script
+
 # v0.0.14
 
 Fix `#getEntities` function
