@@ -25,6 +25,10 @@ program.requiredOption(
     arxliveCopy
 );
 program.requiredOption(
+    '-e, --endpoint <url>',
+    'Endpoint to be used for annotation'
+);
+program.requiredOption(
     '-i, --index <index>',
     'Index on which to annotate',
 );
@@ -67,7 +71,7 @@ const main = async () => {
     }
 
     const queryString = new URLSearchParams(query);
-    const url = `https://api.dap-tools.uk/annotate/es?${queryString.toString()}`;
+    const url = `${options.endpoint}/es?${queryString.toString()}`;
 
     let requestOptions = {
         method: 'GET',
@@ -81,7 +85,7 @@ const main = async () => {
 
     console.log(id);
 
-    const progressEndpoint = 'https://api.dap-tools.uk/annotate/progress/'
+    const progressEndpoint = `${options.endpoint}/progress/`
     response = await fetch(`${progressEndpoint}/${id}`)
     let progress = await response.json();
 
